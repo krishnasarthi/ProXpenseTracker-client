@@ -1,0 +1,102 @@
+<div class="container-fluid">
+
+    <!--  <div class="row row-custom">
+           <div class="col-md-12">
+                <input type="button" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed" class="btn btn-tertiary" value="Filter">
+            </div>
+        </div>-->
+        <div class="row row-custom">
+            <div class="col-md-3">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h3>Apply Filter</h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="row-custom">              <!--<div class="row-custom" uib-collapse="!$ctrl.isCollapsed">-->
+                    <filter align-style="vertical" on-apply="$ctrl.applyFilter(funcParam)" on-cancel="$ctrl.resetFilter()"></filter>
+                </div>
+            </div>
+            <div class="col-md-9">
+                <div class="page-header">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <h3>Daily Expenses</h3>
+                        </div>
+                        <div class="col-md-4 text-right">
+                            <h3>
+                                <a href="./#/reports" class="btn btn-primary">
+                                    <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                                    View Report
+                                </a>
+                                <button class="btn btn-primary" ng-click="$ctrl.newPayment()">
+                                    <i class="glyphicon glyphicon-plus"></i>
+                                    Add New Expense
+                                </button>
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid" style="min-height:400px;">
+                    <table class="table table-hover table-bordered table-inverse">
+                        <thead class="thead-default">
+                            <tr>
+                                <th class="text-center col-md-1">Action</th>
+                                <th class="text-center">
+                                    <div style="cursor:pointer;">
+                                        <span ng-click="$ctrl.sort('subCategory.subcategoryId')"> Item</span>
+                                    </div>
+                                </th>
+                                <th class="text-center">
+                                    <div style="cursor:pointer;">
+                                        <span ng-click="$ctrl.sort('description')"> Description</span>
+                                    </div>
+                                </th>
+                                <th class="text-center">
+                                    <div style="cursor:pointer;">
+                                        <span ng-click="$ctrl.sort('category.categoryId')"> Category</span>
+                                    </div>
+                                </th>
+                                <th class="text-center">
+                                    <div style="cursor:pointer;">
+                                        <span ng-click="$ctrl.sort('amount')"> Amount</span>
+                                    </div>
+                                </th>
+                                <th class="text-center">
+                                    <div style="cursor:pointer;">
+                                        <span ng-click="$ctrl.sort('paymentDate')"> Date</span>
+                                    </div>
+                                </th>
+                                <th class="text-center">
+                                    <div style="cursor:pointer;">
+                                        <span ng-click="$ctrl.sort('paymentType.paymentId')"> Paid By</span>
+                                    </div>
+                                </th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr ng-repeat="transaction in $ctrl.transactions">
+                                <td class="text-center" style="width: 10%;">
+                                    <button type="button" class="btn btn-default" ng-click="$ctrl.editPayment(transaction)">
+                        <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+                    </button>
+                                    <button type="button" class="btn btn-default" ng-click="$ctrl.delete(transaction)">
+                        <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+                    </button>
+                                </td>
+                                <td><span>{{transaction.subCategory.name}}</span></td>
+                                <td><span>{{transaction.description}}</span></td>
+                                <td><span>{{transaction.category.name}}</span></td>
+                                <td><span>{{transaction.amount}}</span></td>
+                                <td><span>{{transaction.paymentDate | date : format}}</span></td>
+                                <td><span>{{transaction.paymentType.name}}</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <uib-pagination total-items="$ctrl.totalItems" ng-model="$ctrl.currentPage" ng-change="$ctrl.pageChanged()"></uib-pagination>
+            </div>
+        </div>
+
+    </div>

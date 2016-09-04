@@ -1,0 +1,26 @@
+<div class="modal-header">
+    <h3>Add New Expense
+        <button type="button" class="close" data-dismiss="modal" ng-click="$ctrl.closeModal()"><span class="glyphicon glyphicon-remove"></span>
+        </button></h3>
+</div>
+<div class="modal-body">
+    <div class="panel">
+        <div class="panel-body">
+<form name="frmNewCategory">
+    <div class="row">
+        <div class="col-lg-6 col-md-6 form-group">
+            <label>Category</label>
+            <input type="text" name="name" ng-model="$ctrl.categoryDesc" class="form-control" required />
+            <p ng-show="frmNewCategory.name.$invalid && !frmNewCategory.name.$pristine" class="help-block">Category name is required.</p>
+        </div>
+        </div>
+    </div>
+</form>
+
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-secondary" type="submit" ng-disabled="frmNewCategory.$invalid" ng-click="$ctrl.save()">Save</button>
+    <button class="btn btn-warning" type="button" ng-click="$ctrl.closeModal()">Cancel</button>
+</div>

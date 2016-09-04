@@ -1,0 +1,8 @@
+<div class="input-group">
+    <input type="text" class="form-control" ng-model="$ctrl.paymentDate" uib-datepicker-popup="{{$ctrl.format}}" is-open="$ctrl.popup.opened"
+        datepicker-options="$ctrl.dateOptions" ng-required="true" close-text="Close" show-weeks="false" show-button-bar="false" />
+    <div class=" input-group-addon btn btn-primary" ng-click="$ctrl.open()">
+        <span class="glyphicon glyphicon-calendar"></span>
+    </div>
+</div>
+<!-- ngIf: showWeeks -->

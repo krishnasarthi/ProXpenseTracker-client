@@ -1,0 +1,13 @@
+<div class="container-fluid">
+    <div class="row row-custom">
+        <div class="col-md-12">
+            <!--<input type="button" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed" class="btn btn-tertiary" value="Filter"> -->
+            <a href="javascript:" ng-click="$ctrl.isCollapsed = !$ctrl.isCollapsed"><h3>Filter</h3></a>
+        </div>
+    </div>
+    <div class="row" uib-collapse="$ctrl.isCollapsed">
+        <div class="col-lg-12 col-md-12">
+            <filter align-style="horizontal" get-report="$ctrl.generateReports(funcParam)" on-cancel="$ctrl.resetFilter()"></filter>
+        </div>
+    </div>
+</div>

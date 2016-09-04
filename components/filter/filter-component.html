@@ -1,0 +1,73 @@
+<div class="panel" ng-if="$ctrl.styleCode == 0">
+    <div class="row">
+        <div class="col-lg-10 col-md-10 form-group">
+            <label>Category</label>
+            <select ng-model="$ctrl.category" class="form-control" ng-options="category as category.name for category in $ctrl.categories track by category._id"
+                    ng-change="$ctrl.getSubCategory()"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-10 col-md-10 form-group">
+            <label>Sub Category</label>
+            <select ng-model="$ctrl.subcategory" class="form-control" ng-options="subcategory as subcategory.name for subcategory in $ctrl.subcategories track by subcategory._id"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-10 col-md-10 form-group">
+            <label>Payment Types</label>
+            <select ng-model="$ctrl.paymentType" class="form-control" ng-options="payment as payment.name for payment in $ctrl.payments track by payment._id"></select>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-10 col-md-10 form-group">
+            <label>Start Date</label>
+            <date-picker date="$ctrl.startDate"></date-picker>
+        </div></div>
+    <div class="row">
+        <div class="col-lg-10 col-md-10 form-group">
+            <label>End Date</label>
+            <date-picker date="$ctrl.endDate"></date-picker>
+        </div>
+    </div>
+    <div class="row text-right">
+        <div class="col-lg-10 col-md-10 form-group text-right">
+            <button class="btn btn-secondary" ng-click="$ctrl.applyFilter()">Apply</button>
+            <button class="btn btn-tertiary" ng-click="$ctrl.resetFilter()">Reset</button></div>
+    </div>
+</div>
+
+<div class="panel" ng-if="$ctrl.styleCode == 1">
+    <div class="row">
+        <div class="col-lg-2 col-md-2 form-group">
+            <label>Category</label>
+            <select ng-model="$ctrl.category" class="form-control" ng-options="category as category.name for category in $ctrl.categories track by category._id"
+                    ng-change="$ctrl.getSubCategory()"></select>
+        </div>
+        <div class="col-lg-2 col-md-2 form-group">
+            <label>Sub Category</label>
+            <select ng-model="$ctrl.subcategory" class="form-control" ng-options="subcategory as subcategory.name for subcategory in $ctrl.subcategories track by subcategory._id"></select>
+        </div>
+        <div class="col-lg-2 col-md-2 form-group">
+            <label>Payment Types</label>
+            <select ng-model="$ctrl.paymentType" class="form-control" ng-options="payment as payment.name for payment in $ctrl.payments track by payment._id"></select>
+        </div>
+        <div class="col-lg-2 col-md-2 form-group">
+            <label>Start Date</label>
+            <date-picker date="$ctrl.startDate"></date-picker>
+
+        </div>
+        <div class="col-lg-2 col-md-2 form-group">
+            <label>End Date</label>
+            <date-picker date="$ctrl.endDate"></date-picker>
+        </div>
+    </div>
+    <div class="row">
+
+    </div>
+    <div class="row text-right">
+        <div class="col-lg-12 col-md-12 form-group text-right">
+            <button class="btn btn-secondary" ng-click="$ctrl.createReport()">Generate Reports</button>
+            <button class="btn btn-tertiary" ng-click="$ctrl.resetFilter()">Reset</button></div>
+    </div>
+</div>
+
