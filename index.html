@@ -4,9 +4,17 @@
 <head>
     <!-- Stylesheets references-->
     <!--<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>-->
+
+    <!-- bower:css -->
+    <!-- endbower -->
+
+
+
+    <!-- inject:css -->
+    <link rel="stylesheet" href="/assets/styles/app.css">
+    <link rel="stylesheet" href="/assets/styles/custom.css">
+    <!-- endinject -->
     <link rel="stylesheet" href="./bower_components/bootstrap/dist/css/bootstrap.css">
-    <link rel="stylesheet" href="./assets/styles/custom.css">
-    <link rel="stylesheet" href="./assets/styles/app.css">
     <style>
         body {
             font-family: 'Open Sans', sans-serif !important;
@@ -25,32 +33,49 @@
             <li class="nav-item"><a class="nav-link" href="./#/paymenttype">Payment Option</a></li>
         </ul>
     </nav>
-    <script src="./bower_components/angular/angular.min.js"></script>
-    <script src="./bower_components/angular-route/angular-route.js"></script>
-    <script src="./bower_components/angular-animate/angular-animate.js"></script>
-    <script src="./app.js"></script>
-    <script src="./vendor/ui-bootstrap-tpls-1.3.3.js"></script>
 
     <ng-view></ng-view>
 
-    <!-- S E R V I C E S -->
-    <script src="./services/categoryService.js"></script>
-    <script src="./services/subcategoryService.js"></script>
-    <script src="./services/paymenttypeService.js"></script>
-    <script src="./services/expenseService.js"></script>
+    <!-- bower:js -->
+    <script src="bower_components/angular/angular.js"></script>
+    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="bower_components/angular-route/angular-route.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.js"></script>
+    <!-- endbower -->
 
-    <!-- C O M P O N E N T S -->
-    <script src="./components/datepicker/datepicker-component.js"></script>
-    <script src="./components/category/category-component.js"></script>
-    <script src="./components/expense/expense-component.js"></script>
-    <script src="./components/expense/new-expense-component.js"></script>
-    <script src="./components/pagination/pagination.component.js"></script>
-    <script src="./components/filter/filter-component.js"></script>
-    <script src="./components/category/new-category-component.js"></script>
-    <script src="./components/report/report-component.js"></script>
+    <script src="/vendor/ui-bootstrap-tpls-1.3.3.js"></script>
+    <!-- inject:js -->
 
-    <!-- D I R E C T I V E S -->
-    <script src="./directives/numbersOnly.js"></script>
+    <script src="/app.js"></script>
+
+    <script src="/components/category/category-component.js"></script>
+
+    <script src="/components/category/new-category-component.js"></script>
+
+    <script src="/components/filter/filter-component.js"></script>
+
+    <script src="/components/datepicker/datepicker-component.js"></script>
+
+    <script src="/components/expense/expense-component.js"></script>
+
+    <script src="/components/expense/new-expense-component.js"></script>
+
+    <script src="/components/pagination/pagination.component.js"></script>
+
+    <script src="/components/Report/report-component.js"></script>
+
+    <script src="/directives/numbersOnly.js"></script>
+
+    <script src="/services/categoryService.js"></script>
+
+    <script src="/services/expenseService.js"></script>
+
+    <script src="/services/paymenttypeService.js"></script>
+
+    <script src="/services/subcategoryService.js"></script>
+
+    <!-- endinject -->
 </body>
 
 </html>
