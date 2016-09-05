@@ -2,9 +2,7 @@
   'use strict';
   var module = angular.module('xpenseTracker');
   var apiUrl = 'http://localhost:3000';
-  module.service('paymenttypeService', [
-    '$http',
-    function ($http) {
+  module.service('paymenttypeService', ['$http', function ($http) {
       this.getPaymentType = function () {
         return $http.get(apiUrl + '/paymenttype');
       };

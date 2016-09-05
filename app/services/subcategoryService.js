@@ -2,9 +2,7 @@
   'use strict';
   var module = angular.module('xpenseTracker');
   var apiUrl = 'http://localhost:3000';
-  module.service('subcategoryService', [
-    '$http',
-    function ($http) {
+  module.service('subcategoryService', ['$http', function ($http) {
       this.getSubCategory = function () {
         return $http.get(apiUrl + '/subcategory');
       };

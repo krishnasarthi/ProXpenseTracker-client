@@ -22,6 +22,7 @@
     "gulp-jshint": "^2.0.1",
     "gulp-load-plugins": "^1.2.4",
     "gulp-minify-html": "^1.0.6",
+    "gulp-ng-annotate": "^2.0.0",
     "gulp-plumber": "^1.1.0",
     "jscs": "^3.0.7",
     "jshint": "^2.9.2",

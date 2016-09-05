@@ -2,9 +2,7 @@
   'use strict';
   var module = angular.module('xpenseTracker');
   var apiUrl = 'http://localhost:3000';
-  module.service('expenseService', [
-    '$http',
-    function ($http) {
+  module.service('expenseService', ['$http', function ($http) {
       function createQueryString(options) {
         var queryString = '';
         //create filter

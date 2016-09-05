@@ -7,6 +7,7 @@ var jscs = require('gulp-jscs');
 var config = require('./gulp.config.js')();
 var del = require('del');
 var cleanCSS = require('gulp-clean-css');
+var ngAnnotate = require('gulp-ng-annotate');
 var CacheBuster = require('gulp-cachebust');
 var cachebust = new CacheBuster();
 
@@ -77,6 +78,19 @@ gulp.task('fixjs', function () {
             handleError: handleError
         }))
         .pipe($.fixmyjs())
+        .pipe(gulp.dest(config.app));
+});
+
+gulp.task('annotate', function () {
+    gulp.src(config.js)
+        .pipe($.plumber({
+            handleError: handleError
+        }))
+        .pipe(ngAnnotate({
+            remove: true,
+            add: true,
+            single_quotes: true
+        }))
         .pipe(gulp.dest(config.app));
 });
 

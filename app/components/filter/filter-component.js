@@ -19,7 +19,6 @@
       vm.startDate = new Date();
       vm.endDate = new Date();
       vm.styleCode = 0;
-      console.log(vm.alignStyle);
       switch (vm.alignStyle) {
       case 'vertical':
         vm.styleCode = 0;
@@ -34,7 +33,6 @@
       categoryService.getCategory().then(function (response) {
         var categoryList = response.data.data;
         categoryList.unshift(defaultCategory);
-        console.log(categoryList);
         vm.categories = categoryList;
         vm.category = categoryList[0];
         vm.getSubCategory();
@@ -52,7 +50,7 @@
     };
     vm.getSubCategory = function () {
       subcategoryService.getSubCategoryByCategory(vm.category).then(function (response) {
-        if (response && response.data && response.data.data.length == 0) {
+        if (response && response.data && response.data.data.length === 0) {
           vm.subcategories = defaultSubCategory;
           vm.subcategory = defaultSubCategory[0];
         } else {

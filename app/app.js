@@ -5,9 +5,7 @@
     'ngAnimate',
     'ui.bootstrap'
   ]);
-  module.config([
-    '$routeProvider',
-    function ($routeProvider) {
+  module.config(['$routeProvider', function ($routeProvider) {
       $routeProvider.when('/category', { template: '<category-component></category-component>' }).when('/transactions', { template: '<expense></expense>' }).when('/reports', { template: '<reports></reports>' }).otherwise({ redirectTo: '/transactions' });
     }
   ]);
