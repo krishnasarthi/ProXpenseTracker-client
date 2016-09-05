@@ -71,13 +71,13 @@ gulp.task('styles', function () {
         .pipe(gulp.dest(config.build));
 });
 
-gulp.task('fixComponents', function () {
-    gulp.src(config.componentsJs)
+gulp.task('fixjs', function () {
+    gulp.src(config.js)
         .pipe($.plumber({
             handleError: handleError
         }))
         .pipe($.fixmyjs())
-        .pipe(gulp.dest(config.componentsJs));
+        .pipe(gulp.dest(config.app));
 });
 
 function cleanFolder(path, cb) {
