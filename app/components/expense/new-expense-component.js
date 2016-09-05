@@ -77,7 +77,7 @@
     };
 
     module.component('newExpense', {
-        templateUrl: './components/expense/new-expense-component.html',
+        templateUrl: './app/components/expense/new-expense-component.html',
         bindings: {
             uibModalInstance: '<'
         } ,

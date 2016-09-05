@@ -99,7 +99,7 @@
     }
 
     module.component('filter', {
-        templateUrl: './components/filter/filter-component.html',
+        templateUrl: './app/components/filter/filter-component.html',
         bindings: {
             onApply: '&?',
             onCancel:'&',

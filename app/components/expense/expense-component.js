@@ -97,7 +97,7 @@
     }
 
     module.component('expense', {
-        templateUrl: '/components/expense/expense-component.html',
+        templateUrl: '/app/components/expense/expense-component.html',
         controller: ['expenseService', '$uibModal', expenseController]
     });
 } ());

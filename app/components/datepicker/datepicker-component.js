@@ -69,7 +69,7 @@
     }
 
     module.component('datePicker', {
-        templateUrl: './components/datepicker/datepicker-component.html',
+        templateUrl: './app/components/datepicker/datepicker-component.html',
         bindings: {
             paymentDate: '=date'
         },

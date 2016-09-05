@@ -81,7 +81,7 @@
         }
     }
     module.component("categoryComponent", {
-        templateUrl: "/components/category/category-component.html",
+        templateUrl: "/app/components/category/category-component.html",
         controller: ['categoryService', '$uibModal',controller]
     });
 } ());

@@ -14,7 +14,7 @@
     }
 
     module.component("reports", {
-        templateUrl: "/components/report/report-component.html",
+        templateUrl: "/app/components/report/report-component.html",
         controller: ['expenseService',reportController]
     });
 } ());

@@ -3,7 +3,7 @@
     var module = angular.module("xpenseTracker");
 
     module.component('newCategory',{
-        templateUrl: './components/category/new-category-component.html',
+        templateUrl: './app/components/category/new-category-component.html',
         controller: ['categoryService',newCategoryController] ,
         bindings: {
             uibModalInstance: '<'
