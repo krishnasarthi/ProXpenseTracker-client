@@ -9,9 +9,10 @@ module.exports = function () {
         app: app,
         client: client,
         index: './index.html',
+        buildIndex:'./index-build.html',
         css: assets + 'styles/**/*.css',
         temp: temp,
-        htmltemplates: './components/**/*.html',
+        htmltemplates: './app/components/**/*.html',
         build: build,
         js: './app/**/*.js',
         bower: {

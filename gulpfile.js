@@ -10,8 +10,9 @@ var cleanCSS = require('gulp-clean-css');
 var ngAnnotate = require('gulp-ng-annotate');
 var CacheBuster = require('gulp-cachebust');
 var cachebust = new CacheBuster();
+var gulpif = require('gulp-if');
 
-gulp.task('vet', function () {
+gulp.task('jshint', function () {
     return gulp
         .src(config.js)
         .pipe(jshint())
@@ -20,14 +21,26 @@ gulp.task('vet', function () {
         }));
 });
 
-gulp.task('optimize', ['inject'], function () {
+gulp.task('build', ['clean', 'inject', 'templatecache'], function () {
     console.log('Optimizing javascript, css, html');
+
+    var templateCache = config.temp + config.templateCache.file;
+    var assets = $.useref({ searchPath: './' });
+    var cssFilter = $.filter('**/*.css');
+    var jsFilter = $.filter('**/*.js');
 
     return gulp
         .src(config.index)
         .pipe($.plumber({
             handleError: handleError
         }))
+        .pipe($.inject(gulp.src(templateCache, { read: false }), {
+            starttag: '<!-- inject:templates:js -->'
+        }))
+        .pipe(assets)
+        .pipe(gulpif('*.js', $.uglify()))
+        .pipe(gulpif('*.css', $.csso()))
+        .pipe(gulp.dest(config.build));
 });
 
 gulp.task('inject', function () {
@@ -42,7 +55,7 @@ gulp.task('inject', function () {
         .pipe(gulp.dest(config.client));
 });
 
-gulp.task('clean-folder', function () {
+gulp.task('clean', function () {
     cleanFolder(config.temp);
     cleanFolder(config.build);
 });
@@ -52,7 +65,7 @@ gulp.task('templatecache', function () {
 
     return gulp
         .src(config.htmltemplates)
-        //.pipe($.minifyHtml({ empty: true }))
+        .pipe($.minifyHtml({ empty: true }))
         .pipe($.angularTemplatecache(
             config.templateCache.file,
             config.templateCache.options
