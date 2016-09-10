@@ -32,6 +32,24 @@
     };
     vm.editPayment = function (payment) {
       console.log(payment);
+      vm.selectedPayment = payment;
+      var modalInstance = $uibModal.open({
+        animation: true,
+        template: '<edit-expense uib-modal-instance="$ctrl.uibModalInstance" params="' + payment._id + '"></edit-expense>',
+        size: 'lg',
+        controller: function ($uibModalInstance) {
+          this.uibModalInstance = $uibModalInstance;
+        },
+        controllerAs: '$ctrl'
+      });
+      modalInstance.result.then(function (response) {
+        console.log(response);
+        if (response && response.status === 200) {
+          //getPayments();
+        }
+      }, function (error) {
+        console.log(error);
+      });
     };
     vm.pageChanged = function () {
       expenseService.getPartialPayment(vm).then(function (response) {
@@ -83,4 +101,4 @@
       expenseController
     ]
   });
-}());
+} ());

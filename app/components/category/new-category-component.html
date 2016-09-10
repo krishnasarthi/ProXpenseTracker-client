@@ -6,19 +6,18 @@
 <div class="modal-body">
     <div class="panel">
         <div class="panel-body">
-<form name="frmNewCategory">
-    <div class="row">
-        <div class="col-lg-6 col-md-6 form-group">
-            <label>Category</label>
-            <input type="text" name="name" ng-model="$ctrl.categoryDesc" class="form-control" required />
-            <p ng-show="frmNewCategory.name.$invalid && !frmNewCategory.name.$pristine" class="help-block">Category name is required.</p>
+            <form name="frmNewCategory">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 form-group">
+                        <label>Category</label>
+                        <input type="text" name="name" ng-model="$ctrl.categoryDesc" class="form-control" required />
+                        <p ng-show="frmNewCategory.name.$invalid && !frmNewCategory.name.$pristine" class="help-block">Category name is required.</p>
+                    </div>
+                </div>
         </div>
-        </div>
+        </form>
     </div>
-</form>
-
-        </div>
-    </div>
+</div>
 </div>
 <div class="modal-footer">
     <button class="btn btn-secondary" type="submit" ng-disabled="frmNewCategory.$invalid" ng-click="$ctrl.save()">Save</button>

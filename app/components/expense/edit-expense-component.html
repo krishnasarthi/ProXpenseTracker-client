@@ -1,0 +1,47 @@
+<div class="modal-header">
+    <h3>Edit Your Expense
+        <button type="button" class="close" data-dismiss="modal" ng-click="$ctrl.closeModal()"><span class="glyphicon glyphicon-remove"></span>
+</button></h3>
+</div>
+<div class="modal-body">
+    <div class="panel">
+
+        <div class="panel-body" ng-if="$ctrl.payment">
+            <div class="row">
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label>Category</label>
+                    <select ng-model="$ctrl.category" class="form-control" ng-options="category as category.name for category in $ctrl.categories track by category._id"
+                        ng-change="$ctrl.getSubCategory()"></select>
+                </div>
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label>Sub Category</label>
+                    <select ng-model="$ctrl.subcategory" class="form-control" ng-options="subcategory as subcategory.name for subcategory in $ctrl.subcategories track by subcategory._id"></select>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label>Paid by</label>
+                    <select ng-model="$ctrl.paymentType" class="form-control" ng-options="payment as payment.name for payment in $ctrl.payments track by payment._id"></select>
+                </div>
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label>Amount</label>
+                    <input type="text" ng-model="$ctrl.amount" numbers-only class="form-control" required/>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label>Description</label>
+                    <input type="text" ng-model="$ctrl.description" class="form-control" required />
+                </div>
+                <div class="col-lg-6 col-md-6 form-group">
+                    <label>Date</label>
+                    <date-picker date="$ctrl.paymentDate" popup-placement="top"></date-picker>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal-footer">
+    <button class="btn btn-primary" type="submit" ng-click="$ctrl.save()">Save</button>
+    <button class="btn btn-warning" type="button" ng-click="$ctrl.closeModal()">Cancel</button>
+</div>

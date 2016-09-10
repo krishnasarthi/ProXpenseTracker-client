@@ -10,4 +10,10 @@
     }
   ]);
   module.component('appAbout', { template: '<h1>This is an About page.............</h1>' });
+
+  module.run(function($rootScope){
+    $rootScope.$on('$routeChangeStart',function(event,next,current){
+      console.log('route changing........................');
+    });
+  });
 }());
